@@ -66,11 +66,11 @@ export default function Upload() {
                         <label>Faculty Name</label>
                         <input type="text" placeholder="e.g., Dr. Alan Turing" />
                     </div>
-
                     <div className="form-group">
                         <label>Note Title</label>
                         <input type="text" placeholder="e.g., Chapter 4: Neural Networks Summary" />
                     </div>
+
 
                     <div className="form-group">
                         <label>Description</label>

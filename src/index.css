@@ -6,8 +6,8 @@
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
-  --accent-primary: #6366f1; /* Indigo */
-  --accent-secondary: #a855f7; /* Purple */
+  --accent-primary: #eb6a4c; /* Coral/Orange */
+  --accent-secondary: #7a4b41; /* Brown */
   --accent-gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   --danger: #ef4444;
   --success: #10b981;
