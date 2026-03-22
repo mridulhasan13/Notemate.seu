@@ -1,0 +1,76 @@
+.upload-page {
+    max-width: 800px;
+    padding-bottom: var(--spacing-16);
+}
+
+.upload-header {
+    margin-bottom: var(--spacing-8);
+}
+
+.upload-header.text-center {
+    text-align: center;
+}
+
+.upload-form-container {
+    padding: var(--spacing-8);
+}
+
+.dropzone {
+    border: 2px dashed rgba(99, 102, 241, 0.4);
+    border-radius: var(--radius-md);
+    background: rgba(99, 102, 241, 0.05);
+    padding: var(--spacing-12) var(--spacing-6);
+    text-align: center;
+    transition: all 0.3s;
+    margin-bottom: var(--spacing-8);
+}
+
+.dropzone:hover {
+    border-color: var(--accent-primary);
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.drop-icon {
+    margin-bottom: var(--spacing-4);
+}
+
+.dropzone h3 {
+    margin-bottom: var(--spacing-2);
+}
+
+.dropzone p {
+    font-size: 0.875rem;
+    margin-bottom: 0;
+}
+
+.upload-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-6);
+}
+
+.w-full {
+    width: 100%;
+}
+
+.mt-4 {
+    margin-top: var(--spacing-4);
+}
