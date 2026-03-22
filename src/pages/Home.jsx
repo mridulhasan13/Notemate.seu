@@ -1,19 +1,20 @@
-import { ArrowRight, Search, Sparkles, FileText, FlaskConical, ClipboardList, Presentation, HelpCircle, BookOpen, Upload, Award, Users } from 'lucide-react';
+import { ArrowRight, Search, Sparkles, FileText, FlaskConical, ClipboardList, Presentation, HelpCircle, BookOpen, Upload, Award, Users, Facebook, Instagram, Linkedin, Github, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import NoteCard from '../components/NoteCard';
 import Button from '../components/Button';
 import './Home.css';
+import nazmulImg from '../assets/nazmul.png';
 
 export default function Home() {
   const categories = [
-    { name: 'Note', icon: FileText, path: '/browse?type=note' },
-    { name: 'Lab Report', icon: FlaskConical, path: '/browse?type=lab' },
-    { name: 'Assignment', icon: ClipboardList, path: '/browse?type=assignment' },
-    { name: 'Presentation', icon: Presentation, path: '/browse?type=presentation' },
-    { name: 'Question Bank', icon: HelpCircle, path: '/browse?type=question-bank' },
-    { name: 'Syllabus', icon: BookOpen, path: '/browse?type=syllabus' },
+    { name: 'Note', icon: FileText, path: '/departments/note' },
+    { name: 'Lab Report', icon: FlaskConical, path: '/departments/lab-report' },
+    { name: 'Assignment', icon: ClipboardList, path: '/departments/assignment' },
+    { name: 'Presentation', icon: Presentation, path: '/departments/presentation' },
+    { name: 'Question Bank', icon: HelpCircle, path: '/departments/question-bank' },
+    { name: 'Syllabus', icon: BookOpen, path: '/departments/syllabus' },
     { name: 'Submit Note', icon: Upload, path: '/upload' },
-    { name: 'Credit plan', icon: Award, path: '/credit-plan' },
+    { name: 'Credit plan', icon: Award, path: '/departments/credit-plan' },
     { name: 'Teachers information', icon: Users, path: '/teachers' },
   ];
 
@@ -43,18 +44,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Popular Notes */}
-      <section className="popular-section container delay-400" style={{ marginTop: '5rem' }}>
-        <div className="section-header">
-          <h2>Trending Notes</h2>
-          <Link to="/browse" className="view-all-link">
-            View all <ArrowRight size={16} />
-          </Link>
-        </div>
-        <div className="notes-grid">
-          {recentNotes.map((note) => (
-            <NoteCard key={note.id} {...note} />
-          ))}
+      {/* Built By Section */}
+      <section className="container animate-fade-in delay-400" style={{ marginTop: '8rem', paddingBottom: '4rem' }}>
+        <div style={{ height: '1px', background: 'var(--glass-border)', width: '100%', marginBottom: '4rem' }}></div>
+        <h2 style={{ textAlign: 'center', marginBottom: '4rem', fontSize: '2rem', letterSpacing: '1px', color: 'var(--text-primary)' }}>
+          Built <span className="text-gradient">By</span>
+        </h2>
+        
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '5rem', flexWrap: 'wrap' }}>
+          
+          {/* Member 1: Nazmul Hossain */}
+          <div className="glass-panel" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '2.5rem 2rem', width: '320px', flexGrow: 1, maxWidth: '380px', borderRadius: 'var(--radius-lg)' }}>
+            <img 
+              src={nazmulImg} 
+              alt="Nazmul Hossain" 
+              style={{ width: '120px', height: '120px', borderRadius: '50%', marginBottom: '1.5rem', border: '5px solid rgba(235, 106, 76, 0.2)', objectFit: 'cover' }} 
+            />
+            <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.25rem', fontWeight: '600' }}>Nazmul Hossain</h3>
+            <p style={{ margin: 0, color: 'var(--accent-primary)', fontSize: '1.15rem', fontWeight: '700', letterSpacing: '2px' }}>CSE-70</p>
+            <p style={{ margin: '0.2rem 0 1.5rem 0', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>ID: 2025100000141</p>
+            
+            <div className="team-socials" style={{ display: 'flex', gap: '1rem', marginTop: 'auto' }}>
+              <a href="#" target="_blank" rel="noopener noreferrer"><Globe size={20} /></a>
+              <a href="https://www.facebook.com/share/1WtyCW219R/" target="_blank" rel="noopener noreferrer"><Facebook size={20} /></a>
+              <a href="https://www.instagram.com/brown_cyanide/" target="_blank" rel="noopener noreferrer"><Instagram size={20} /></a>
+              <a href="https://www.linkedin.com/in/nazmul-hossain-344514361/" target="_blank" rel="noopener noreferrer"><Linkedin size={20} /></a>
+              <a href="https://github.com/nazmulhossain250" target="_blank" rel="noopener noreferrer"><Github size={20} /></a>
+            </div>
+          </div>
+
+          {/* Member 2: Mahmudul */}
+          <div className="glass-panel" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '2.5rem 2rem', width: '320px', flexGrow: 1, maxWidth: '380px', borderRadius: 'var(--radius-lg)' }}>
+            <div style={{ width: '120px', height: '120px', borderRadius: '50%', marginBottom: '1.5rem', border: '5px solid var(--glass-border)', background: 'rgba(255, 255, 255, 0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+               <Users size={40} color="var(--text-muted)" />
+            </div>
+            <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.25rem', fontWeight: '600' }}>Mahmudul Hasan Mridul</h3>
+            <p style={{ margin: '0 0 1.5rem 0', color: 'var(--accent-primary)', fontSize: '1.15rem', fontWeight: '700', letterSpacing: '2px' }}>IPE</p>
+
+            <div className="team-socials" style={{ display: 'flex', gap: '1rem', marginTop: 'auto' }}>
+              <a href="https://mahmudulhasanmridul.netlify.app/" target="_blank" rel="noopener noreferrer"><Globe size={20} /></a>
+              <a href="https://www.facebook.com/mahmudulhasan.mridul01" target="_blank" rel="noopener noreferrer"><Facebook size={20} /></a>
+              <a href="https://www.instagram.com/mustard_slevalion/" target="_blank" rel="noopener noreferrer"><Instagram size={20} /></a>
+              <a href="https://www.linkedin.com/in/mahmudul-hasan-mridul1/" target="_blank" rel="noopener noreferrer"><Linkedin size={20} /></a>
+              <a href="https://github.com/mridulhasan13" target="_blank" rel="noopener noreferrer"><Github size={20} /></a>
+            </div>
+          </div>
+
         </div>
       </section>
     </div>

@@ -1,101 +1,89 @@
 .footer {
-  margin-top: var(--spacing-16);
   background: rgba(11, 15, 25, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-top: 1px solid var(--glass-border);
-  padding-top: var(--spacing-12);
 }
 
-.footer-content {
+.centered-footer {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: var(--spacing-8);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-3);
   margin-bottom: var(--spacing-8);
 }
 
-.footer-brand {
-  max-width: 300px;
-}
-
-.footer-description {
-  margin-top: var(--spacing-4);
-  margin-bottom: var(--spacing-6);
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.footer-socials {
+.footer-logo {
   display: flex;
-  gap: var(--spacing-4);
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  margin-bottom: var(--spacing-3);
+  transition: transform 0.2s ease;
 }
 
-.social-link {
+.footer-logo:hover {
+  transform: scale(1.02);
+}
+
+.footer-logo .logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.footer-tagline {
   color: var(--text-secondary);
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.highlight-text {
+  color: #fbbf24; /* Professional golden yellow */
+  font-weight: 600;
+}
+
+.footer-horizontal-links {
+  display: flex;
+  gap: var(--spacing-8);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--spacing-4);
+}
+
+.footer-horizontal-links a {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
   transition: all 0.2s ease;
 }
 
-.social-link:hover {
-  color: var(--accent-primary);
-  transform: translateY(-2px);
-}
-
-.footer-links {
-  display: flex;
-  gap: var(--spacing-12);
-  flex-wrap: wrap;
-}
-
-.footer-column {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-3);
-}
-
-.footer-column h3 {
-  font-size: 1.1rem;
-  margin-bottom: var(--spacing-2);
+.footer-horizontal-links a:hover {
   color: var(--text-primary);
 }
 
-.footer-column a {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-}
-
-.footer-column a:hover {
-  color: var(--accent-primary);
-}
-
 .footer-bottom {
-  border-top: 1px solid var(--glass-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Ultra-subtle elegant partition */
   padding: var(--spacing-6) 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .bottom-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: var(--spacing-4);
 }
 
 .bottom-content p {
   margin: 0;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-}
-
-.made-with {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-1);
-}
-
-.heart-icon {
-  color: var(--accent-primary);
-  fill: var(--accent-primary);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
 }

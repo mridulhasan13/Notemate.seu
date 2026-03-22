@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <nav className="navbar glass-panel">
       <div className="container navbar-content">
-        <Link to="/" className="navbar-logo" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <Link to="/" className="navbar-logo" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }} onClick={() => { if (window.location.pathname === '/') window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
           <img src={logoImage} alt="Notemate Logo" style={{ height: '40px', width: 'auto' }} />
           <span className="logo-text text-gradient" style={{ fontSize: '1.4rem', fontWeight: '800', letterSpacing: '1px' }}>NOTEMATE</span>
         </Link>

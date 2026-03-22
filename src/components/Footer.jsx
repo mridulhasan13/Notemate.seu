@@ -6,44 +6,24 @@ import logoImage from '../assets/NOTEMATE-01.png';
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="container footer-content">
-        <div className="footer-brand">
-          <Link to="/" className="footer-logo" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <img src={logoImage} alt="Notemate Logo" style={{ height: '30px', width: 'auto' }} />
-            <span className="logo-text text-gradient" style={{ fontSize: '1.2rem', fontWeight: '800', letterSpacing: '1px' }}>NOTEMATE</span>
-          </Link>
-          <p className="footer-description">
-            The ultimate university knowledge base. A smarter way to study, share, and succeed together.
-          </p>
-          <div className="footer-socials">
-            <a href="#" className="social-link"><Twitter size={20} /></a>
-            <a href="#" className="social-link"><Github size={20} /></a>
-            <a href="#" className="social-link"><Linkedin size={20} /></a>
-          </div>
-        </div>
+      <div className="container footer-content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', paddingBottom: '1rem', paddingTop: '1rem' }}>
         
-        <div className="footer-links">
-          <div className="footer-column">
-            <h3>Resources</h3>
-            <Link to="/browse?type=note">Notes</Link>
-            <Link to="/browse?type=lab">Lab Reports</Link>
-            <Link to="/browse?type=assignment">Assignments</Link>
-            <Link to="/browse?type=presentation">Presentations</Link>
-          </div>
-          <div className="footer-column">
-            <h3>Company</h3>
-            <Link to="/about">About Us</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/privacy">Privacy</Link>
-            <Link to="/terms">Terms</Link>
-          </div>
-        </div>
+        {/* Brand */}
+        <Link to="/" className="footer-logo" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px', textDecoration: 'none', margin: 0 }} onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+          <img src={logoImage} alt="Notemate Logo" style={{ height: '56px', width: 'auto' }} />
+          <span className="logo-text text-gradient" style={{ fontSize: '1.75rem', fontWeight: 800, letterSpacing: '2px' }}>NOTEMATE</span>
+        </Link>
+        
       </div>
       
-      <div className="footer-bottom">
-        <div className="container bottom-content">
-          <p>&copy; {new Date().getFullYear()} Notemate. All rights reserved.</p>
-          <p className="made-with">Made with <Heart size={14} className="heart-icon" /> for students</p>
+      <div className="footer-bottom" style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', padding: '0.75rem 0', background: 'rgba(0, 0, 0, 0.3)' }}>
+        <div className="container bottom-content" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '4px' }}>
+          <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '0.85rem', letterSpacing: '0.5px' }}>
+            Note Sharing site for <span style={{ color: '#fbbf24', fontWeight: 600 }}>Southeast University</span>
+          </p>
+          <p style={{ margin: 0, color: 'var(--text-muted)', fontSize: '0.85rem', letterSpacing: '0.5px' }}>
+            All rights reserved by NoteMate
+          </p>
         </div>
       </div>
     </footer>

@@ -1,0 +1,61 @@
+.departments-page {
+  min-height: calc(100vh - 80px);
+}
+
+.depts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.dept-card {
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--glass-border);
+}
+
+.dept-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-glow);
+  border-color: rgba(235, 106, 76, 0.4);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.dept-icon-wrapper {
+  background: rgba(235, 106, 76, 0.1);
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.dept-card:hover .dept-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.dept-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.dept-info h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.dept-info p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.25;
+}
