@@ -75,9 +75,39 @@
   font-size: 1.125rem;
 }
 
-.hero-actions {
+.categories-grid {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--spacing-4);
+  margin-top: var(--spacing-4);
+  width: 100%;
+}
+
+.category-pill {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-5);
+  background: rgba(22, 27, 34, 0.6);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.category-pill:hover {
+  background: rgba(235, 106, 76, 0.15); /* Match brand color */
+  border-color: rgba(235, 106, 76, 0.3);
+  transform: translateY(-3px);
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(235, 106, 76, 0.2);
+}
+
+.category-icon {
+  color: var(--accent-primary);
 }
 
 .popular-section {

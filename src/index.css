@@ -108,9 +108,14 @@ a:hover {
   padding: 0 var(--spacing-6);
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .page-wrapper {
-  padding-top: 100px; /* Space for navbar */
-  min-height: calc(100vh - 80px);
+  padding-top: 80px; /* Space for navbar */
   display: flex;
   flex-direction: column;
 }
