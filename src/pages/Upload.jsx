@@ -21,25 +21,56 @@ export default function Upload() {
                 </div>
 
                 <form className="upload-details">
+                    <div className="form-row">
+                        <div className="form-group">
+                            <label>Your Name</label>
+                            <input type="text" placeholder="e.g., John Doe" />
+                        </div>
+                        <div className="form-group">
+                            <label>Student ID</label>
+                            <input type="text" placeholder="e.g., 20210000" />
+                        </div>
+                    </div>
+
+                    <div className="form-row">
+                        <div className="form-group">
+                            <label>Batch</label>
+                            <input type="text" placeholder="e.g., 21st Batch" />
+                        </div>
+                        <div className="form-group">
+                            <label>Department</label>
+                            <select defaultValue="">
+                                <option value="" disabled>Select department</option>
+                                <option>Computer Science</option>
+                                <option>Business</option>
+                                <option>Biology</option>
+                                <option>Economics</option>
+                                <option>Engineering</option>
+                                <option>Arts</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div className="form-row">
+                        <div className="form-group">
+                            <label>Course Name</label>
+                            <input type="text" placeholder="e.g., Intro to Algorithms" />
+                        </div>
+                        <div className="form-group">
+                            <label>Course Code</label>
+                            <input type="text" placeholder="e.g., CS 101" />
+                        </div>
+                    </div>
+
+                    <div className="form-group">
+                        <label>Faculty Name</label>
+                        <input type="text" placeholder="e.g., Dr. Alan Turing" />
+                    </div>
                     <div className="form-group">
                         <label>Note Title</label>
                         <input type="text" placeholder="e.g., Chapter 4: Neural Networks Summary" />
                     </div>
 
-                    <div className="form-row">
-                        <div className="form-group">
-                            <label>Course Code</label>
-                            <input type="text" placeholder="e.g., CS 401" />
-                        </div>
-                        <div className="form-group">
-                            <label>Semester</label>
-                            <select defaultValue="">
-                                <option value="" disabled>Select semester</option>
-                                <option>Fall 2025</option>
-                                <option>Spring 2026</option>
-                            </select>
-                        </div>
-                    </div>
 
                     <div className="form-group">
                         <label>Description</label>
