@@ -5,6 +5,9 @@ import Browse from './pages/Browse';
 import Upload from './pages/Upload';
 import NoteViewer from './pages/NoteViewer';
 
+import MenuPage from './pages/Menu';
+import Footer from './components/Footer';
+
 function App() {
   return (
     <Router>
@@ -17,8 +20,10 @@ function App() {
           <Route path="/browse" element={<Browse />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/note/:id" element={<NoteViewer />} />
+          <Route path="/menu" element={<MenuPage />} />
         </Routes>
       </main>
+      <Footer />
     </Router>
   );
 }
