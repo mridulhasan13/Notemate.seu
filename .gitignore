@@ -7,18 +7,18 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-<<<<<<< HEAD
 # node_modules
 node_modules/
 
 # build
 dist/
 dist-ssr/
-=======
-node_modules
-dist
-dist-ssr
->>>>>>> 8a726e339f7ab471dd4a4f4fc5a04c7023621fb3
+
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 *.local
 
 # Editor directories and files

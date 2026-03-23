@@ -63,5 +63,12 @@
 .nav-link.active {
   color: #ffffff;
   background: var(--accent-primary);
-  box-shadow: 0 4px 12px rgba(235, 106, 76, 0.3);
+  box-shadow: 0 0 20px rgba(235, 106, 76, 0.4);
+  animation: activePulse 2s infinite;
+}
+
+@keyframes activePulse {
+  0% { box-shadow: 0 0 10px rgba(235, 106, 76, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(235, 106, 76, 0.6); }
+  100% { box-shadow: 0 0 10px rgba(235, 106, 76, 0.3); }
 }

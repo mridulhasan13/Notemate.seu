@@ -1,0 +1,115 @@
+.prerequisites-page {
+  padding: 8rem 1rem 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  margin-bottom: var(--spacing-6);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.back-btn:hover {
+  color: var(--accent-primary);
+}
+
+.prerequisites-container {
+  padding: var(--spacing-10);
+  text-align: center;
+}
+
+.prerequisites-container .header h1 {
+  font-size: 2rem;
+  margin: var(--spacing-4) 0 var(--spacing-2);
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.code-badge {
+  background: rgba(235, 106, 76, 0.1);
+  color: var(--accent-primary);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-sm);
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border: 1px solid rgba(235, 106, 76, 0.2);
+}
+
+.prerequisites-container .content {
+  margin: var(--spacing-12) 0;
+}
+
+.prerequisites-container .content h3 {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-6);
+}
+
+.prereq-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-4);
+}
+
+.prereq-btn {
+  padding: var(--spacing-4) var(--spacing-8);
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 600;
+  transition: all 0.2s;
+  border-radius: var(--radius-md);
+}
+
+.prereq-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-glow);
+  color: var(--accent-primary);
+}
+
+.empty-state {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.actions {
+  margin-top: var(--spacing-10);
+  padding-top: var(--spacing-10);
+  border-top: 1px solid var(--border-light);
+}
+
+.proceed-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  background: var(--accent-gradient);
+  color: white;
+  padding: var(--spacing-4) var(--spacing-10);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(235, 106, 76, 0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.proceed-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(235, 106, 76, 0.4);
+}

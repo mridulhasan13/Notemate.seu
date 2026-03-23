@@ -1,48 +1,52 @@
-import { Book, Filter, ChevronRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { useLocation, Link } from 'react-router-dom';
+import { Filter, Loader2, BookOpen, FileText } from 'lucide-react';
 import NoteCard from '../components/NoteCard';
+import { supabase } from '../utils/supabaseClient';
+import { courseData } from '../data/courses';
 import './Browse.css';
 
 export default function Browse() {
-    // Mock data
-    const categories = ['Computer Science', 'Business', 'Biology', 'Economics', 'Engineering', 'Arts'];
-    const notes = [
-        { id: 1, title: 'Intro to Algorithms', course: 'CS 101', uploader: 'John M.', date: '3d ago', downloads: 41, rating: 4.8 },
-        { id: 2, title: 'Marketing Principles', course: 'MKT 205', uploader: 'Sarah J.', date: '1w ago', downloads: 120, rating: 4.5 },
-        { id: 3, title: 'Organic Chem Summary', course: 'CHM 302', uploader: 'Mike R.', date: '2w ago', downloads: 350, rating: 4.9 },
-        { id: 4, title: 'Database Systems Notes', course: 'CS 340', uploader: 'Emily K.', date: '3d ago', downloads: 85, rating: 4.6 },
-    ];
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const selectedType = queryParams.get('type') || 'note';
+    const selectedDept = queryParams.get('department') || 'CSE';
+
+    // Get static curriculum for this dept/type
+    const curriculum = (courseData[selectedDept] && courseData[selectedDept][selectedType]) || [];
 
     return (
         <div className="browse-page container animate-fade-in">
             <div className="browse-header">
                 <div>
-                    <h1>Browse Notes</h1>
-                    <p>Find the best study materials by department or semester.</p>
+                    <h1>{selectedDept} {selectedType.charAt(0).toUpperCase() + selectedType.slice(1).replace('-', ' ')}s</h1>
+                    <p>Official Curriculum & Student Resources</p>
                 </div>
-                <button className="btn btn-secondary filter-btn">
-                    <Filter size={18} /> Filters
-                </button>
             </div>
 
-            <div className="browse-layout">
-                <aside className="sidebar">
-                    <h3>Departments</h3>
-                    <ul className="category-list">
-                        {categories.map((cat) => (
-                            <li key={cat} className="category-item">
-                                <Book size={16} className="text-muted" />
-                                <span>{cat}</span>
-                                <ChevronRight size={14} className="chevron" />
-                            </li>
-                        ))}
-                    </ul>
-                </aside>
-
-                <main className="browse-content">
+            <div className="browse-content">
+                {/* Official Curriculum Directory (Always visible) */}
+                <div className="section-container">
+                    <h2 className="section-title"><BookOpen size={20} className="text-gradient" /> {selectedDept} Curriculum Directory</h2>
                     <div className="browse-grid">
-                        {notes.map(note => <NoteCard key={note.id} {...note} />)}
+                        {curriculum.length > 0 ? (
+                            curriculum.map((course, index) => (
+                                <NoteCard 
+                                    key={`curriculum-${index}`} 
+                                    id={`curriculum-${index}`} 
+                                    title={course} 
+                                    isPlaceholder={true} // New prop for visual differentiation
+                                    dept={selectedDept}
+                                />
+                            ))
+                        ) : (
+                            <div className="no-results glass-panel w-full">
+                                <h3>No Curriculum Found</h3>
+                                <p>Check back later for updates to the {selectedDept} catalog.</p>
+                            </div>
+                        )}
                     </div>
-                </main>
+                </div>
             </div>
         </div>
     );

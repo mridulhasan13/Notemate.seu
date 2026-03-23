@@ -4,6 +4,7 @@ import NoteCard from '../components/NoteCard';
 import Button from '../components/Button';
 import './Home.css';
 import nazmulImg from '../assets/nazmul.png';
+import mridulImg from '../assets/Untitled design.png';
 
 export default function Home() {
   const categories = [
@@ -19,9 +20,9 @@ export default function Home() {
   ];
 
   const recentNotes = [
-    { id: 1, title: 'Microeconomics Midterm Prep', course: 'ECON 101', uploader: 'Sarah J.', date: '2d ago', downloads: 142, rating: 4.9 },
-    { id: 2, title: 'Data Structures Compendium', course: 'CS 202', uploader: 'Alex M.', date: '5d ago', downloads: 320, rating: 5.0 },
-    { id: 3, title: 'Cell Biology Notes Chapter 4-6', course: 'BIO 110', uploader: 'Jessica T.', date: '1w ago', downloads: 89, rating: 4.7 },
+    { id: 1, title: 'Microeconomics Midterm Prep' },
+    { id: 2, title: 'Data Structures Compendium' },
+    { id: 3, title: 'Cell Biology Notes Chapter 4-6' },
   ];
 
   return (
@@ -54,7 +55,11 @@ export default function Home() {
         <div style={{ display: 'flex', justifyContent: 'center', gap: '5rem', flexWrap: 'wrap' }}>
           
           {/* Member 1: Nazmul Hossain */}
-          <div className="glass-panel" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '2.5rem 2rem', width: '320px', flexGrow: 1, maxWidth: '380px', borderRadius: 'var(--radius-lg)' }}>
+          <div 
+            className="glass-panel founder-card-interactive" 
+            onClick={() => navigate('/information')}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '2.5rem 2rem', width: '320px', flexGrow: 1, maxWidth: '380px', borderRadius: 'var(--radius-lg)', cursor: 'pointer' }}
+          >
             <img 
               src={nazmulImg} 
               alt="Nazmul Hossain" 
@@ -64,7 +69,7 @@ export default function Home() {
             <p style={{ margin: 0, color: 'var(--accent-primary)', fontSize: '1.15rem', fontWeight: '700', letterSpacing: '2px' }}>CSE-70</p>
             <p style={{ margin: '0.2rem 0 1.5rem 0', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>ID: 2025100000141</p>
             
-            <div className="team-socials" style={{ display: 'flex', gap: '1rem', marginTop: 'auto' }}>
+            <div className="team-socials" onClick={(e) => e.stopPropagation()} style={{ display: 'flex', gap: '1rem', marginTop: 'auto' }}>
               <a href="#" target="_blank" rel="noopener noreferrer"><Globe size={20} /></a>
               <a href="https://www.facebook.com/share/1WtyCW219R/" target="_blank" rel="noopener noreferrer"><Facebook size={20} /></a>
               <a href="https://www.instagram.com/brown_cyanide/" target="_blank" rel="noopener noreferrer"><Instagram size={20} /></a>
@@ -74,14 +79,20 @@ export default function Home() {
           </div>
 
           {/* Member 2: Mahmudul */}
-          <div className="glass-panel" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '2.5rem 2rem', width: '320px', flexGrow: 1, maxWidth: '380px', borderRadius: 'var(--radius-lg)' }}>
-            <div style={{ width: '120px', height: '120px', borderRadius: '50%', marginBottom: '1.5rem', border: '5px solid var(--glass-border)', background: 'rgba(255, 255, 255, 0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-               <Users size={40} color="var(--text-muted)" />
-            </div>
+          <div 
+            className="glass-panel founder-card-interactive" 
+            onClick={() => navigate('/information')}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '2.5rem 2rem', width: '320px', flexGrow: 1, maxWidth: '380px', borderRadius: 'var(--radius-lg)', cursor: 'pointer' }}
+          >
+            <img 
+              src={mridulImg} 
+              alt="Mahmudul Hasan Mridul" 
+              style={{ width: '120px', height: '120px', borderRadius: '50%', marginBottom: '1.5rem', border: '5px solid rgba(235, 106, 76, 0.2)', objectFit: 'cover' }} 
+            />
             <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.25rem', fontWeight: '600' }}>Mahmudul Hasan Mridul</h3>
             <p style={{ margin: '0 0 1.5rem 0', color: 'var(--accent-primary)', fontSize: '1.15rem', fontWeight: '700', letterSpacing: '2px' }}>IPE</p>
 
-            <div className="team-socials" style={{ display: 'flex', gap: '1rem', marginTop: 'auto' }}>
+            <div className="team-socials" onClick={(e) => e.stopPropagation()} style={{ display: 'flex', gap: '1rem', marginTop: 'auto' }}>
               <a href="https://mahmudulhasanmridul.netlify.app/" target="_blank" rel="noopener noreferrer"><Globe size={20} /></a>
               <a href="https://www.facebook.com/mahmudulhasan.mridul01" target="_blank" rel="noopener noreferrer"><Facebook size={20} /></a>
               <a href="https://www.instagram.com/mustard_slevalion/" target="_blank" rel="noopener noreferrer"><Instagram size={20} /></a>
