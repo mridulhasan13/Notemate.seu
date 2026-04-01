@@ -21,6 +21,11 @@ dist-ssr/
 .env.production.local
 *.local
 
+# Data Archives
+archive_scraper_data.json
+data_english_staff.json
+merged_fetch_scripts.js
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

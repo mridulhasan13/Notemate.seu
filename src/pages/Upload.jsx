@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { UploadCloud, ChevronDown, Check, Loader2 } from 'lucide-react';
 import Button from '../components/Button';
 import { resourceTypes, courseData } from '../data/courses';
+import { facultyData } from '../data/facultyData';
 import { supabase } from '../utils/supabaseClient';
 import './Upload.css';
 
@@ -31,6 +32,8 @@ export default function Upload() {
     const [isBatchOpen, setIsBatchOpen] = useState(false);
     const [isTypeOpen, setIsTypeOpen] = useState(false);
     const [isCourseOpen, setIsCourseOpen] = useState(false);
+    const [isFacultyOpen, setIsFacultyOpen] = useState(false);
+    const [facultySearchTerm, setFacultySearchTerm] = useState('');
     const [uploadStatus, setUploadStatus] = useState(null);
 
     const departments = ['CSE', 'EEE', 'TE', 'Arch', 'Economics', 'English', 'Bangla', 'BBA', 'Law', 'Pharmacy', 'ICT'];
@@ -46,6 +49,17 @@ export default function Upload() {
             return { code: '', title: courseStr, full: courseStr };
         })
         : [];
+
+    // Filter faculty by selected department
+    const filteredFaculty = selectedDept 
+        ? facultyData.filter(f => f.department === selectedDept)
+        : [];
+
+    // Search within filtered faculty
+    const searchedFaculty = filteredFaculty.filter(f => 
+        f.name.toLowerCase().includes(facultySearchTerm.toLowerCase()) ||
+        f.designation.toLowerCase().includes(facultySearchTerm.toLowerCase())
+    );
 
     const onFileChange = (e) => {
         const file = e.target.files[0];
@@ -338,15 +352,56 @@ export default function Upload() {
                                     className="disabled-input"
                                 />
                             </div>
-                            <div className="form-group">
+                            <div className="form-group" style={{ position: 'relative' }}>
                                 <label>Faculty Name</label>
-                                <input 
-                                    type="text" 
-                                    placeholder="e.g., Dr. Alan Turing" 
-                                    value={facultyName}
-                                    onChange={(e) => setFacultyName(e.target.value)}
-                                    required
-                                />
+                                <div className="custom-select-container">
+                                    <div 
+                                        className={`custom-select-trigger ${isFacultyOpen ? 'active' : ''} ${!selectedDept ? 'disabled' : ''}`} 
+                                        onClick={() => selectedDept && setIsFacultyOpen(!isFacultyOpen)}
+                                    >
+                                        <span style={{ color: facultyName ? 'var(--text-primary)' : 'var(--text-muted)' }}>
+                                            {facultyName || (selectedDept ? 'Select teacher' : 'Select department first')}
+                                        </span>
+                                        <ChevronDown size={18} className="dropdown-arrow" />
+                                    </div>
+                                    {isFacultyOpen && selectedDept && (
+                                        <div className="custom-options">
+                                            <div className="search-box p-2" onClick={(e) => e.stopPropagation()}>
+                                                <input 
+                                                    type="text" 
+                                                    placeholder="Search teacher..."
+                                                    value={facultySearchTerm}
+                                                    onChange={(e) => setFacultySearchTerm(e.target.value)}
+                                                    className="w-full search-dropdown-input"
+                                                    autoFocus
+                                                />
+                                            </div>
+                                            <div className="options-scroll" style={{ maxHeight: '200px', overflowY: 'auto' }}>
+                                                {searchedFaculty.length > 0 ? (
+                                                    searchedFaculty.map((f, i) => (
+                                                        <div 
+                                                            key={f.id || i} 
+                                                            className={`custom-option ${facultyName === f.name ? 'selected' : ''}`}
+                                                            onClick={() => {
+                                                                setFacultyName(f.name);
+                                                                setIsFacultyOpen(false);
+                                                                setFacultySearchTerm('');
+                                                            }}
+                                                        >
+                                                            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                                                <span style={{ fontWeight: '500' }}>{f.name}</span>
+                                                                <span style={{ fontSize: '0.8rem', opacity: 0.7 }}>{f.designation}</span>
+                                                            </div>
+                                                            {facultyName === f.name && <Check size={16} className="selection-check" />}
+                                                        </div>
+                                                    ))
+                                                ) : (
+                                                    <div className="custom-option disabled">No teachers found</div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         </div>
                         

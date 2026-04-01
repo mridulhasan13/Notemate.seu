@@ -24,7 +24,7 @@ export default function MenuPage() {
     { name: 'Syllabus', icon: BookOpen, path: '/departments/syllabus', desc: 'Course outlines and curriculum' },
     { name: 'Credit Plan', icon: Award, path: '/departments/credit-plan', desc: 'Departmental degree requirements' },
     { name: 'Submit Note', icon: Upload, path: '/upload', desc: 'Share your materials with the community' },
-    { name: 'Teachers Info', icon: Users, path: '/teachers', desc: 'Faculty contact and office info' },
+    { name: 'Teachers Info', icon: Users, path: '/departments/teachers', desc: 'Faculty contact and office info' },
   ];
 
   return (

@@ -9,6 +9,7 @@ import NoteViewer from './pages/NoteViewer';
 import MenuPage from './pages/Menu';
 import AIAssistance from './pages/AIAssistance';
 import Information from './pages/Information';
+import Teachers from './pages/Teachers';
 import Footer from './components/Footer';
 import Departments from './pages/Departments';
 import ScrollRestoration from './components/ScrollRestoration';
@@ -49,6 +50,7 @@ function App() {
           <Route path="/departments/:type" element={<Departments />} />
           <Route path="/ai-assistance" element={<AIAssistance />} />
           <Route path="/information" element={<Information />} />
+          <Route path="/teachers" element={<Teachers />} />
         </Routes>
       </main>
       <Footer />

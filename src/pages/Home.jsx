@@ -16,8 +16,9 @@ export default function Home() {
     { name: 'Syllabus', icon: BookOpen, path: '/departments/syllabus' },
     { name: 'Submit Note', icon: Upload, path: '/upload' },
     { name: 'Credit plan', icon: Award, path: '/departments/credit-plan' },
-    { name: 'Teachers information', icon: Users, path: '/teachers' },
+    { name: 'Teachers information', icon: Users, path: '/departments/teachers' },
   ];
+
 
   const recentNotes = [
     { id: 1, title: 'Microeconomics Midterm Prep' },

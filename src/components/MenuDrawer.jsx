@@ -30,7 +30,7 @@ export default function MenuDrawer({ isOpen, onClose }) {
     { name: 'Syllabus', icon: BookOpen, path: '/departments/syllabus', desc: 'Official course outlines' },
     { name: 'Credit Plan', icon: Award, path: '/departments/credit-plan', desc: 'Degree requirements' },
     { name: 'Submit Note', icon: Upload, path: '/upload', desc: 'Share your materials' },
-    { name: 'Teachers Info', icon: Users, path: '/teachers', desc: 'Faculty contact details' },
+    { name: 'Teachers Info', icon: Users, path: '/departments/teachers', desc: 'Faculty contact details' },
     { name: 'Mission & Info', icon: Info, path: '/information', desc: 'Our vision and founders' },
   ];
 
